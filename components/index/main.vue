@@ -16,16 +16,25 @@
                         </button>
                     </div>
                 </div>
+
+                <!-- 计数器组件 -->
+                <div class="counter">
+                    <Counter />
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import Counter from './counter';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
 export default {
+    components: {
+        Counter
+    },
     data() {
         return {
             input_url: '',
