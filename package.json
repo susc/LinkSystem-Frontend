@@ -1,0 +1,22 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "The frontend of LinkSystem.",
+  "author": "susc",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bootstrap-vue": "^2.15.0",
+    "moment": "^2.26.0",
+    "normalize.css": "^8.0.1",
+    "nuxt": "^2.0.0",
+    "sweetalert2": "^9.15.1"
+  },
+  "devDependencies": {}
+}
