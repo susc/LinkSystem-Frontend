@@ -100,7 +100,7 @@ export default {
                         customClass: {
                             confirmButton: 'modal-confirm-button'
                         },
-                        backdrop: false
+                        allowOutsideClick: false
                     });
                 }
             ).catch(
