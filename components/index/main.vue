@@ -87,7 +87,7 @@ export default {
                 return this.reset();
             }
 
-            axios.post('https://api.linksystem.ewrt.top/v1/links', {
+            axios.post('https://service-37st3k6g-1252233372.gz.apigw.tencentcs.com/links', {
                 domain: 'na.tn',
                 url: url
             }).then(

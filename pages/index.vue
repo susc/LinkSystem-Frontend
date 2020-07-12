@@ -19,8 +19,8 @@ import axios from 'axios';
 
 export default {
   asyncData({params}) {
-    return axios.get('https://api.linksystem.ewrt.top/v1/friendship_links').then(
-      res=>{
+    return axios.get('https://service-37st3k6g-1252233372.gz.apigw.tencentcs.com/friendship_links').then(
+      res => {
         return {
           flinks: res.data
         }
