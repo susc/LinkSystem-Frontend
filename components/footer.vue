@@ -10,6 +10,9 @@
             <div class="copyright">
                 © EWRT 短链接服务 2017 - {{nowYear}}
             </div>
+            <div class="record">
+                <a href="http://www.beian.miit.gov.cn/" target="_blank">粤ICP备19121626号-1</a>
+            </div>
         </div>
     </div>
 </template>
@@ -70,9 +73,18 @@ hr {
     height: 1px;
 }
 
-.copyright {
+.copyright,
+.record {
     font-size: 12px;
     margin-top: 0.5rem;
     text-align: center;
+}
+
+.record a {
+    text-decoration: none;
+}
+
+.record a:visited {
+    color: black;
 }
 </style>
