@@ -13,7 +13,8 @@ export default {
       { hid: 'keywords', name: 'keywords', content: 'NA.TN,短链接,压缩链接,短链接服务,短链接生成,短网址,短网址生成,链接缩短,缩短网址,长链接缩短' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap' }
     ]
   },
   /*

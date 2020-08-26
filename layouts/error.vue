@@ -3,7 +3,10 @@
         <Header></Header>
 
         <div class="container">
-            <h1 class="error-title">错误</h1>
+            <h1 class="error-title">
+                <img class="error-icon" src="/icon/error.png">
+                错误
+            </h1>
             <p class="error-reason">{{errorReason}}</p>
             <nuxt-link to="/" class="return-home">返回首页</nuxt-link>
         </div>
@@ -14,7 +17,6 @@
 
 <script>
 import Header from '../components/header';
-import ErrorMain from '../components/error/main';
 import Footer from '../components/footer';
 
 export default {
@@ -22,7 +24,6 @@ export default {
     layout: 'default',
     components: {
         Header,
-        ErrorMain,
         Footer
     },
     mounted() {
@@ -55,5 +56,23 @@ export default {
 .error-reason,
 .return-home {
     text-align: center;
+}
+
+.error-icon {
+    height: 30px;
+    margin-right: 0.5rem;
+}
+
+.error-title {
+    margin-top: 3rem;
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-reason,
+.return-home {
+    font-size: 14px;
 }
 </style>

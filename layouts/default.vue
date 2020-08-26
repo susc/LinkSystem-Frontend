@@ -14,4 +14,7 @@ export default {
 </script>
 
 <style>
+:root {
+  font-family: 'Noto Sans SC', Arial, Helvetica, sans-serif;
+}
 </style>
