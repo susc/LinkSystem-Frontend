@@ -27,8 +27,8 @@ export default {
         Footer
     },
     mounted() {
-        console.log(this.error);
-        console.log(this.$route);
+        // console.log(this.error);
+        // console.log(this.$route);
     },
     computed: {
         errorReason() {
