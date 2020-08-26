@@ -2,7 +2,7 @@
     <div>
         <div class="container">
             <hr />
-            <div class="friendship-links">
+            <div class="friendship-links" v-if="this.flinks">
                 <span>友情链接：</span>
                 <a class="flink" v-for="item in this.flinks" :key="item.id" target="_blank" :href="item.url">{{item.title}}</a>
                 <a class="apply" href="mailto:apply@ewrt.top">交换友链</a>
@@ -11,7 +11,7 @@
                 © EWRT 短链接服务 2017 - {{nowYear}}
             </div>
             <div class="record">
-                <a href="http://www.beian.miit.gov.cn/" target="_blank">粤ICP备19121626号-1</a>
+                <a href="http://www.beian.miit.gov.cn/" target="_blank">粤ICP备19121626号</a>
             </div>
         </div>
     </div>
