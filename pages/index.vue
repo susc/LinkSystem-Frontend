@@ -7,7 +7,7 @@
     <Main></Main>
 
     <!-- 页脚 -->
-    <Footer :flinks="flinks"></Footer>
+    <Footer id="footer" :flinks="flinks"></Footer>
   </div>
 </template>
 
@@ -41,5 +41,9 @@ export default {
 </script>
 
 <style scoped>
-  
+  #footer {
+    position: absolute;
+    bottom: 1.3rem;
+    min-width: 100vw;
+  }
 </style>
