@@ -139,7 +139,7 @@ a:hover {
 }
 
 .main {
-    margin-top: 5rem;
+    margin-top: 8rem;
 }
 
 .main h1 {
