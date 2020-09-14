@@ -1,7 +1,5 @@
 <template>
     <div>
-        <Header></Header>
-
         <div class="container">
             <h1 class="error-title">
                 <img class="error-icon" src="/icon/error.png">
@@ -10,22 +8,14 @@
             <p class="error-reason">{{errorReason}}</p>
             <nuxt-link to="/" class="return-home">返回首页</nuxt-link>
         </div>
-        
-        <Footer></Footer>
     </div>
 </template>
 
 <script>
-import Header from '../components/header';
-import Footer from '../components/footer';
 
 export default {
     props: ['error'],
     layout: 'default',
-    components: {
-        Header,
-        Footer
-    },
     mounted() {
         // console.log(this.error);
         // console.log(this.$route);

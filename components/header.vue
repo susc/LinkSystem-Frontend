@@ -7,8 +7,8 @@
                         <nuxt-link to="/">EWRT 短链接服务</nuxt-link>
                     </div>
                     <div class="content-right">
+                        <!-- TODO: 注册/登录 -->
                         <!-- <a href="#" @click="showDevelopingMedal()">登录 | 注册</a> -->
-                        <a href="mailto:info@ewrt.top">联系站长</a>
                     </div>
                 </div>
             </div>
@@ -21,17 +21,17 @@ import Swal from 'sweetalert2';
 
 export default {
     methods: {
-        showDevelopingMedal() {
-            Swal.fire({
-                title: '提示',
-                text: '开发中，敬请期待',
-                icon: 'info',
-                confirmButtonText: '确定',
-                customClass: {
-                    confirmButton: 'modal-confirm-button'
-                }
-            });
-        }
+        // showDevelopingMedal() {
+        //     Swal.fire({
+        //         title: '提示',
+        //         text: '开发中，敬请期待',
+        //         icon: 'info',
+        //         confirmButtonText: '确定',
+        //         customClass: {
+        //             confirmButton: 'modal-confirm-button'
+        //         }
+        //     });
+        // }
     }
 }
 </script>

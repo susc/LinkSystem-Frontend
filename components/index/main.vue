@@ -162,10 +162,6 @@ a:hover {
     display: flex;
 }
 
-/* .input-area input {
-    border-right: none;
-} */
-
 .input-area input,
 .input-area button {
     border: none;

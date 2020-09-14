@@ -2,17 +2,15 @@
     <div>
         <div class="container">
             <hr />
-            <div class="friendship-links" v-if="this.flinks">
-                <span>友情链接：</span>
-                <a class="flink" v-for="item in this.flinks" :key="item.id" target="_blank" :href="item.url">{{item.title}}</a>
-                <a class="apply" href="mailto:apply@ewrt.top">交换友链</a>
+            <div class="friendship-links">
+                <nuxt-link class="flink" to="/">首页</nuxt-link>
+                <nuxt-link class="flink" to="/terms-and-conditions">使用条款</nuxt-link>
+                <nuxt-link class="flink" to="/privacy">隐私条款</nuxt-link>
+                <a class="flink" href="mailto:info@ewrt.top">联系站长</a>
             </div>
             <div class="copyright">
                 © EWRT 短链接服务 2017 - {{nowYear}}
             </div>
-            <!-- <div class="record">
-                <a href="http://www.beian.miit.gov.cn/" target="_blank">粤ICP备19121626号</a>
-            </div> -->
         </div>
     </div>
 </template>
@@ -21,7 +19,6 @@
 import moment from 'moment';
 
 export default {
-    props: ['flinks'],
     computed: {
         nowYear() {
             return moment().utcOffset(8).format('YYYY');
@@ -50,7 +47,8 @@ div {
 }
 
 .flink {
-    color: #787fa9;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(26, 94, 197);
     text-decoration: none;
 }
 
