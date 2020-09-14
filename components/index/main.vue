@@ -12,7 +12,7 @@
                         <button
                             @click="handleShorten()"
                             :disabled="processing ? true : false">
-                                {{processing ? '生成中' : '缩短'}}
+                            {{processing ? '生成中' : '缩短'}}
                         </button>
                     </div>
                 </div>
@@ -156,8 +156,8 @@ a:hover {
 
 /* 输入框 + 按钮区域 */
 .input-area div {
-    max-width: 750px;
-    min-width: 200px;
+    /* max-width: 750px; */
+    /* min-width: 200px; */
     width: 80%;
     display: flex;
 }
@@ -186,5 +186,7 @@ a:hover {
     font-weight: 600;
     cursor: pointer;
     padding: 10px 20px;
+    /* 让文字在Safari浏览器下不换行 */
+    white-space: nowrap;
 }
 </style>
