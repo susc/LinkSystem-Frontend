@@ -9,6 +9,7 @@
 import Main from '../components/index/main';
 
 export default {
+  layout: 'default-no-header',
   components: {
     Main
   },

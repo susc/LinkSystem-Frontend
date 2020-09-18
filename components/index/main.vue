@@ -2,7 +2,17 @@
     <div>
         <div class="main">
             <div class="container">
+                <!-- 首页大LOGO -->
+                <div class="brand">
+                    <nuxt-link to="/">
+                        <img src="/favicon.ico" alt="EWRT短链接服务" title="EWRT短链接服务" />
+                    </nuxt-link>
+                </div>
+
+                <!-- 首页标语 -->
                 <h1>开始缩短您的链接吧</h1>
+
+                <!-- 输入区 -->
                 <div class="input-area">
                     <div>
                         <input
@@ -146,6 +156,12 @@ a:hover {
     margin: 0;
     text-align: center;
     font-weight: 200;
+}
+
+.brand {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
 }
 
 .input-area {
