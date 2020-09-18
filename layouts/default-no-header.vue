@@ -24,8 +24,4 @@ export default {
 :root {
   font-family: 'Noto Sans SC', Arial, Helvetica, sans-serif;
 }
-
-#main-wrapper {
-  min-height: 100vh;
-}
 </style>
