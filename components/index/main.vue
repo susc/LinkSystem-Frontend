@@ -40,6 +40,7 @@
 import Counter from './counter';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import Vue from 'vue'
 
 export default {
     components: {
@@ -117,7 +118,7 @@ export default {
                 err => {
                     Swal.fire({
                         title: '错误',
-                        text: err.response.data.error || '未知错误',
+                        text: Vue.parseError(err.response.data.error),
                         icon: 'error',
                         confirmButtonText: '确定',
                         customClass: {

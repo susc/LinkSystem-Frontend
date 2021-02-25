@@ -34,6 +34,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '~/plugins/error-parser/index.js' }
   ],
   /*
   ** Nuxt.js dev-modules
