@@ -21,6 +21,9 @@ export default {
   ** Customize the progress-bar color
   */
   loading: { color: '#fff' },
+  env: {
+    "API_HOST": "api.link.eastazure.com"
+  },
   /*
   ** Global CSS
   */

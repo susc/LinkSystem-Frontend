@@ -30,10 +30,10 @@ export default {
     },
     methods: {
         async getData() {
-            axios.get('https://service-37st3k6g-1252233372.gz.apigw.tencentcs.com/count/links').then(res => {
+            axios.get(`https://${process.env.API_HOST}/count/links`).then(res => {
                 this.links = res.data.data;
             });
-            axios.get('https://service-37st3k6g-1252233372.gz.apigw.tencentcs.com/count/clicks').then(res => {
+            axios.get(`https://${process.env.API_HOST}/count/clicks`).then(res => {
                 this.clicks = res.data.data;
             });
         }

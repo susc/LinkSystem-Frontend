@@ -97,7 +97,7 @@ export default {
                 return this.reset();
             }
 
-            axios.post('https://service-37st3k6g-1252233372.gz.apigw.tencentcs.com/links', {
+            axios.post(`https://${process.env.API_HOST}/links`, {
                 domain: 'na.tn',
                 url: url
             }).then(
