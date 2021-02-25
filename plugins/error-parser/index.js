@@ -1,4 +1,4 @@
 import Vue from 'vue'
-const ErrorParser = require('./errorParser')
+const ErrorParser = require('./ErrorParser')
 
 Vue.use(ErrorParser)
