@@ -9,7 +9,7 @@
                 <a class="flink" href="mailto:info@ewrt.top">联系站长</a>
             </div>
             <div class="copyright">
-                © EWRT 短链接服务 2017 - {{nowYear}}
+                © 东方蓝短链接服务 2017 - {{nowYear}}
             </div>
         </div>
     </div>

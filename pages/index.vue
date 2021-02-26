@@ -15,7 +15,7 @@ export default {
   },
   head() {
     return {
-      title: '首页 - EWRT短链接服务'
+      title: `首页 - ${process.env.SITE_NAME}`
     }
   }
 }

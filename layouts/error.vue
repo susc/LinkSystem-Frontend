@@ -23,7 +23,7 @@ export default {
     computed: {
         errorReason() {
             let _query = this.$route.query;
-            if(_query.type === 'link-not-found') {
+            if(_query.type === 'LINK_NOT_FOUND') {
                 return '您访问的链接不存在';
             }
             return '你来到了一片荒地（404）';
@@ -31,7 +31,7 @@ export default {
     },
     head() {
         return {
-            title: '错误 - EWRT 短链接服务'
+            title: `错误 - ${process.env.SITE_NAME}`
         }
     }
 }
