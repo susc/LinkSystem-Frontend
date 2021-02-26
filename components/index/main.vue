@@ -27,6 +27,9 @@
                     </div>
                 </div>
 
+                <!-- 检测结果提示 -->
+                <SecurityHint />
+
                 <!-- 计数器组件 -->
                 <div class="counter">
                     <Counter />
@@ -37,14 +40,16 @@
 </template>
 
 <script>
-import Counter from './counter';
-import axios from 'axios';
-import Swal from 'sweetalert2';
+import Counter from './counter'
+import axios from 'axios'
+import Swal from 'sweetalert2'
 import Vue from 'vue'
+import SecurityHint from './security-hint'
 
 export default {
     components: {
-        Counter
+        Counter,
+        SecurityHint
     },
     data() {
         return {
