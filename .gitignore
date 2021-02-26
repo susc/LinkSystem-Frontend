@@ -89,6 +89,6 @@ sw.*
 # Vim swap files
 *.swp
 
-package-lock.json
-
 .vercel
+
+.vscode
