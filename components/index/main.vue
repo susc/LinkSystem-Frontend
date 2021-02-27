@@ -3,11 +3,7 @@
         <div class="main">
             <div class="container">
                 <!-- 首页大LOGO -->
-                <div class="brand">
-                    <nuxt-link to="/">
-                        <img src="/favicon.ico" alt="EWRT短链接服务" title="EWRT短链接服务" />
-                    </nuxt-link>
-                </div>
+                <Logo />
 
                 <!-- 首页标语 -->
                 <h1>开始缩短您的链接吧</h1>
@@ -45,11 +41,13 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 import Vue from 'vue'
 import SecurityHint from './security-hint'
+import Logo from '../logo'
 
 export default {
     components: {
         Counter,
-        SecurityHint
+        SecurityHint,
+        Logo
     },
     data() {
         return {
@@ -162,12 +160,6 @@ a:hover {
     margin: 0;
     text-align: center;
     font-weight: 200;
-}
-
-.brand {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
 }
 
 .input-area {
