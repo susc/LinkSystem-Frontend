@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="content">
                     <div class="brand content-left">
-                        <nuxt-link to="/">EWRT 短链接服务</nuxt-link>
+                        <nuxt-link to="/">{{ siteName }}</nuxt-link>
                     </div>
                     <div class="content-right">
                         <!-- TODO: 注册/登录 -->
@@ -32,6 +32,11 @@ export default {
         //         }
         //     });
         // }
+    },
+    data() {
+        return {
+            siteName: process.env.SITE_NAME
+        }
     }
 }
 </script>
