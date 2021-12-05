@@ -14,6 +14,7 @@
                         <input
                             type="url"
                             placeholder="您的长链接（以 http:// 或 https:// 开头）"
+                            v-focus
                             v-model="input_url" />
                         <button
                             @click="handleShorten()"
@@ -134,6 +135,14 @@ export default {
                     return this.reset();
                 }
             )
+        }
+    },
+    directives: {
+        // 当页面加载完成，自动获取焦点
+        'focus': {
+            inserted: function (el) {
+                el.focus()
+            }
         }
     }
 }
