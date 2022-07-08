@@ -14,7 +14,7 @@
     "axios": ">=0.21.2",
     "bootstrap-vue": "^2.15.0",
     "cos-nodejs-sdk-v5": "^2.9.4",
-    "moment": "^2.26.0",
+    "moment": "^2.29.4",
     "normalize.css": "^8.0.1",
     "nuxt": "^2.0.0",
     "sweetalert2": "^9.15.1",
