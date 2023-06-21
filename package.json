@@ -16,7 +16,7 @@
     "cos-nodejs-sdk-v5": "^2.9.4",
     "moment": "^2.26.0",
     "normalize.css": "^8.0.1",
-    "nuxt": "^2.0.0",
+    "nuxt": "^3.4.3",
     "sweetalert2": "^9.15.1",
     "vue": "^2.6.12"
   }
