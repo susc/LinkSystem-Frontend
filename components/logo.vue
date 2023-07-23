@@ -38,7 +38,7 @@
 .d2 {
     left: 0;
     top: 0;
-    background-color: cornflowerblue;
+    background-color: #1677ff;
     z-index: 1;
 }
 
