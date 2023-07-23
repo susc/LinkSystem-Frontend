@@ -13,6 +13,6 @@ RUN npm i
 RUN npm run build
 
 # 服务端口
-EXPOSE 8000
+EXPOSE 3000
 
 ENTRYPOINT npm run preview
