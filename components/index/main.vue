@@ -103,7 +103,7 @@ export default {
             }
 
             axios.post(`https://${process.env.API_HOST}/links`, {
-                domain: 'na.tn',
+                domain: 'go.eastazure.com',
                 url: url
             }).then(
                 res=>{
