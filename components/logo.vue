@@ -8,12 +8,6 @@
     </div>
 </template>
 
-<script>
-export default {
-
-}
-</script>
-
 <style scoped>
 .wwrap {
     height: 160px;

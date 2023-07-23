@@ -1,30 +1,26 @@
 <template>
-  <div>
-    <!-- 主操作区 -->
-    <Main></Main>
-  </div>
+    <div>
+        <Head>
+            <Title>首页 - {{SITE_NAME}}</Title>
+        </Head>
+
+        <Main />
+    </div>
 </template>
 
-<script>
-import Main from '../components/index/main';
+<script setup>
+const runtimeConfig = useRuntimeConfig()
+const SITE_NAME = runtimeConfig.public.SITE_NAME
 
-export default {
-  layout: 'default-no-header',
-  components: {
-    Main
-  },
-  head() {
-    return {
-      title: `首页 - ${process.env.SITE_NAME}`
-    }
-  }
-}
+definePageMeta({
+    layout: 'default-no-header'
+})
 </script>
 
 <style scoped>
-  #footer {
+#footer {
     position: absolute;
     bottom: 1.3rem;
     min-width: 100vw;
-  }
+}
 </style>

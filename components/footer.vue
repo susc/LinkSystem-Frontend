@@ -3,9 +3,9 @@
         <div class="container">
             <hr />
             <div class="friendship-links">
-                <nuxt-link class="flink" to="/">首页</nuxt-link>
-                <nuxt-link class="flink" to="/terms-and-conditions">使用条款</nuxt-link>
-                <nuxt-link class="flink" to="/privacy">隐私条款</nuxt-link>
+                <NuxtLink class="flink" to="/">首页</NuxtLink>
+                <NuxtLink class="flink" to="/terms-and-conditions">使用条款</NuxtLink>
+                <NuxtLink class="flink" to="/privacy">隐私条款</NuxtLink>
                 <a class="flink" href="mailto:info@ewrt.top">联系站长</a>
             </div>
             <div class="copyright">

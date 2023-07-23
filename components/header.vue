@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="content">
                     <div class="brand content-left">
-                        <nuxt-link to="/">{{ siteName }}</nuxt-link>
+                        <nuxt-link to="/">{{ SITE_NAME }}</nuxt-link>
                     </div>
                     <div class="content-right">
                         <!-- TODO: 注册/登录 -->
@@ -16,29 +16,9 @@
     </div>
 </template>
 
-<script>
-import Swal from 'sweetalert2';
-
-export default {
-    methods: {
-        // showDevelopingMedal() {
-        //     Swal.fire({
-        //         title: '提示',
-        //         text: '开发中，敬请期待',
-        //         icon: 'info',
-        //         confirmButtonText: '确定',
-        //         customClass: {
-        //             confirmButton: 'modal-confirm-button'
-        //         }
-        //     });
-        // }
-    },
-    data() {
-        return {
-            siteName: process.env.SITE_NAME
-        }
-    }
-}
+<script setup>
+const runtimeConfig = useRuntimeConfig()
+const SITE_NAME = runtimeConfig.public.SITE_NAME
 </script>
 
 <style scoped>

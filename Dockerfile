@@ -15,4 +15,4 @@ RUN npm run build
 # 服务端口
 EXPOSE 8000
 
-ENTRYPOINT npm run start
+ENTRYPOINT npm run preview

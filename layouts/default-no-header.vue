@@ -1,27 +1,20 @@
 <template>
-  <div id="main-wrapper">
-    <nuxt />
+    <div id="main-wrapper">
+        <slot />
 
-    <!-- 页脚 -->
-    <Footer id="footer"></Footer>
-  </div>
+        <!-- 页脚 -->
+        <Footer id="footer"></Footer>
+    </div>
 </template>
-
-<script>
+  
+<script setup>
 import 'normalize.css';
 import 'bootstrap/dist/css/bootstrap-grid.min.css';
-
-import Footer from '../components/footer';
-
-export default {
-  components: {
-    Footer
-  },
-}
 </script>
 
 <style>
 :root {
-  font-family: 'Noto Sans SC', Arial, Helvetica, sans-serif;
+font-family: 'Noto Sans SC', Arial, Helvetica, sans-serif;
 }
 </style>
+  

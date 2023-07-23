@@ -1,0 +1,1 @@
+import{_ as t}from"./bootstrap-grid.min.7e30233b.js";/* empty css                  */import{c as _,k as r,h as a,o as n}from"./entry.14b6242d.js";const s={id:"main-wrapper"},i={__name:"default-no-header",setup(c){return(e,d)=>{const o=t;return n(),_("div",s,[r(e.$slots,"default"),a(o,{id:"footer"})])}}};export{i as default};
