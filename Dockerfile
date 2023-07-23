@@ -4,9 +4,9 @@ LABEL maintainer="szuzsc@live.com"
 
 ENV TZ=Asia/Shanghai
 
-ADD . /LinkSystem-Frontend
-
 WORKDIR /LinkSystem-Frontend
+
+ADD . /LinkSystem-Frontend
 
 RUN npm i
 
