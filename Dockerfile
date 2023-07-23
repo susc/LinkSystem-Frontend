@@ -6,7 +6,7 @@ ENV TZ=Asia/Shanghai
 
 WORKDIR /LinkSystem-Frontend
 
-ADD . /LinkSystem-Frontend
+ADD . .
 
 RUN npm i
 
