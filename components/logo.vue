@@ -21,6 +21,11 @@
     width: 100px;
     height: 100px;
     position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+.wrap:hover {
+    transform: translateY(-0.3rem) scale(1.02);
 }
 
 .box {

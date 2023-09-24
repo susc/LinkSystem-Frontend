@@ -17,6 +17,7 @@
                             v-focus
                             v-model="input_url" />
                         <button
+                            class="shorten-button"
                             @click="handleShorten()"
                             :disabled="processing ? true : false">
                             {{processing ? '生成中' : '缩短'}}
@@ -37,14 +38,15 @@
 
 <script setup>
 import 'normalize.css'
-import Swal from 'sweetalert2'
 import axios from 'axios'
+import { Modal, Button } from 'ant-design-vue'
+import useErrorInfo from '@/composables/useErrorInfo'
 
+const AButton = Button
 const input_url = ref("")
 const processing = ref(false)
 const runtimeConfig = useRuntimeConfig()
 const API_HOST = runtimeConfig.public.API_HOST
-import useErrorInfo from '@/composables/useErrorInfo'
 
 // 自动聚焦指令
 const vFocus = {
@@ -72,28 +74,24 @@ function checkURL(url) {
 
 // 错误弹窗
 function errorPrompt(text) {
-    Swal.fire({
+    Modal.error({
         title: '错误',
-        text,
-        icon: 'error',
-        confirmButtonText: '确定',
-        customClass: {
-            confirmButton: 'modal-confirm-button'
-        }
+        content: text,
+        centered: true,
+        maskClosable: true,
+        okText: '确定',
+        cancelText: 'OK'
     })
 }
 
 // 缩短成功弹窗
 function successShortenPrompt(sURL) {
-    Swal.fire({
+    Modal.success({
         title: '成功',
-        html: `您的短链接：<a href="${sURL}" target="_blank">${sURL}</a>`,
-        icon: 'success',
-        confirmButtonText: '确定',
-        customClass: {
-            confirmButton: 'modal-confirm-button'
-        },
-        allowOutsideClick: false
+        content: h('div', {}, ['您的短链接：', h('a', { href: sURL, target: '_blank' }, sURL)]),
+        centered: true,
+        okText: '确定',
+        cancelText: '复制链接'
     })
 }
 
@@ -182,8 +180,9 @@ a:hover {
     flex: 1;
 }
 
-.input-area button {
-    background: #3464e0;
+.shorten-button {
+    transition: all 0.2s ease-in-out;
+    background: #0958d9;
     border-radius: 0 3px 3px 0;
     color: white;
     font-weight: 600;
@@ -191,5 +190,18 @@ a:hover {
     padding: 10px 20px;
     /* 让文字在Safari浏览器下不换行 */
     white-space: nowrap;
+}
+
+.shorten-button:hover {
+    background-color: #003eb3;
+}
+
+.shorten-button:active {
+    background-color: #002c8c;
+}
+
+.shorten-button:disabled {
+    background-color: #d9d9d9;
+    color: black;
 }
 </style>
