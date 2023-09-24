@@ -12,9 +12,9 @@
                 <div class="input-area">
                     <div>
                         <input
-                            id="url-input"
                             type="url"
                             placeholder="您的长链接（以 http:// 或 https:// 开头）"
+                            v-focus
                             v-model="input_url" />
                         <button
                             @click="handleShorten()"
@@ -24,7 +24,6 @@
                     </div>
                 </div>
 
-                <!-- 检测结果提示 -->
                 <SecurityHint />
 
                 <!-- 计数器组件 -->
@@ -47,6 +46,14 @@ const runtimeConfig = useRuntimeConfig()
 const API_HOST = runtimeConfig.public.API_HOST
 const ERROR_MESSAGE_MAP = runtimeConfig.public.ERROR_MESSAGE_MAP
 
+// 自动聚焦指令
+const vFocus = {
+    mounted(el) {
+        el.focus()
+    }
+}
+
+// 重置状态
 function reset() {
     input_url.value = ''
     processing.value = false
@@ -63,73 +70,61 @@ function checkURL(url) {
     }
 }
 
+// 错误弹窗
+function errorPrompt(text) {
+    Swal.fire({
+        title: '错误',
+        text,
+        icon: 'error',
+        confirmButtonText: '确定',
+        customClass: {
+            confirmButton: 'modal-confirm-button'
+        }
+    })
+}
+
+// 缩短成功弹窗
+function successShortenPrompt(sURL) {
+    Swal.fire({
+        title: '成功',
+        html: `您的短链接：<a href="${sURL}" target="_blank">${sURL}</a>`,
+        icon: 'success',
+        confirmButtonText: '确定',
+        customClass: {
+            confirmButton: 'modal-confirm-button'
+        },
+        allowOutsideClick: false
+    })
+}
+
 async function handleShorten() {
     processing.value = true
 
+    // 用户输入URL为空
     if (!input_url.value) {
-        Swal.fire({
-            title: '错误',
-            text: '请输入一个 URL',
-            icon: 'error',
-            confirmButtonText: '确定',
-            customClass: {
-                confirmButton: 'modal-confirm-button'
-            }
-        })
+        errorPrompt('请输入一个 URL')
         return reset()
     }
 
-    if (!checkURL(input_url.value)) {
-        Swal.fire({
-            title: '错误',
-            text: '请输入一个合法的 URL',
-            icon: 'error',
-            confirmButtonText: '确定',
-            customClass: {
-                confirmButton: 'modal-confirm-button'
-            }
-        })
+    // 用户输入URL不合法
+    if (!checkURL(input_url.value) || input_url.value.length > 2048) {
+        errorPrompt('请输入一个合法的 URL')
         return reset()
     }
 
-    axios.post(`https://${API_HOST}/links`, {
-        domain: 'go.eastazure.com',
-        url: input_url.value
-    }).then(
-        res=>{
-            Swal.fire({
-                title: '成功',
-                html: `您的短链接：<a href="${res.data.data}" target="_blank">${res.data.data}</a>`,
-                icon: 'success',
-                confirmButtonText: '确定',
-                customClass: {
-                    confirmButton: 'modal-confirm-button'
-                },
-                allowOutsideClick: false
-            })
-        }
-    ).catch(
-        err => {
-            Swal.fire({
-                title: '错误',
-                text: ERROR_MESSAGE_MAP[err.response.data.error] || '未知错误',
-                icon: 'error',
-                confirmButtonText: '确定',
-                customClass: {
-                    confirmButton: 'modal-confirm-button'
-                }
-            })
-        }
-    ).finally(
-        () => {
-            return reset()
-        }
-    )
+    // 请求创建短链接
+    try {
+        let res = await axios.post(`https://${API_HOST}/links`, {
+            domain: 'go.eastazure.com',
+            url: input_url.value
+        })
+        successShortenPrompt(res.data.data)
+    } catch (err) {
+        errorPrompt(ERROR_MESSAGE_MAP[err.response.data.error] || '未知错误')
+    } finally {
+        reset()
+    }
 }
-
-onMounted(() => {
-    document.getElementById('url-input').focus()
-})
 </script>
 
 <style scoped>

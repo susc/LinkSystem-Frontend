@@ -15,16 +15,11 @@
     </div>
 </template>
 
-<script>
-import moment from 'moment';
+<script setup>
+import { computed } from 'vue'
+import moment from 'moment'
 
-export default {
-    computed: {
-        nowYear() {
-            return moment().utcOffset(8).format('YYYY');
-        }
-    }
-}
+const nowYear = computed(() => moment().utcOffset(8).format('YYYY'))
 </script>
 
 <style scoped>
