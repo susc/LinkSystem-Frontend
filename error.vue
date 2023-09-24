@@ -20,10 +20,8 @@ const SITE_NAME = runtimeConfig.public.SITE_NAME
 const route = useRoute()
 
 const errorReason = computed(() => {
-    if (route.query.type === 'LINK_NOT_FOUND') {
-        return '您访问的链接不存在'
-    }
-    return '你来到了一片荒地（404）'
+    const errorInfo = useErrorInfo(route.query.type)
+    return errorInfo !== '未知错误' ? errorInfo : '你来到了一片荒地（404）'
 })
 </script>
 

@@ -44,7 +44,7 @@ const input_url = ref("")
 const processing = ref(false)
 const runtimeConfig = useRuntimeConfig()
 const API_HOST = runtimeConfig.public.API_HOST
-const ERROR_MESSAGE_MAP = runtimeConfig.public.ERROR_MESSAGE_MAP
+import useErrorInfo from '@/composables/useErrorInfo'
 
 // 自动聚焦指令
 const vFocus = {
@@ -120,7 +120,7 @@ async function handleShorten() {
         })
         successShortenPrompt(res.data.data)
     } catch (err) {
-        errorPrompt(ERROR_MESSAGE_MAP[err.response.data.error] || '未知错误')
+        errorPrompt(useErrorInfo(err.response.data.error))
     } finally {
         reset()
     }
