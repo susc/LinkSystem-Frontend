@@ -1,12 +1,12 @@
 <template>
     <div>
         <div class="main">
-            <div class="container">
+            <div>
                 <!-- 首页大LOGO -->
                 <Logo />
 
                 <!-- 首页标语 -->
-                <h1>开始缩短您的链接吧</h1>
+                <h1 v-forbid-select>开始缩短您的链接吧</h1>
 
                 <!-- 输入区 -->
                 <div class="input-area">
@@ -25,7 +25,7 @@
                     </div>
                 </div>
 
-                <SecurityHint />
+                <SecurityHint v-forbid-select />
 
                 <!-- 计数器组件 -->
                 <div class="counter">
@@ -52,6 +52,12 @@ const API_HOST = runtimeConfig.public.API_HOST
 const vFocus = {
     mounted(el) {
         el.focus()
+    }
+}
+
+const vForbidSelect = {
+    mounted(el) {
+        el.style.userSelect = 'none'
     }
 }
 
@@ -158,7 +164,7 @@ a:hover {
 .input-area div {
     /* max-width: 750px; */
     /* min-width: 200px; */
-    width: 80%;
+    width: 100%;
     display: flex;
 }
 

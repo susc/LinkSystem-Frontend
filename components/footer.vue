@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="container">
+        <div class="wrapper">
             <hr />
             <div class="friendship-links">
                 <NuxtLink class="flink" to="/">首页</NuxtLink>
@@ -51,7 +51,7 @@ div {
     text-decoration: none;
 }
 
-.container {
+.wrapper {
     /* 字体颜色 */
     --font-color: #262626;
 
@@ -64,12 +64,14 @@ hr {
     display: block;
     border: none;
     height: 1px;
+    width: 100%;
 }
 
 .copyright,
 .record {
     font-size: 12px;
     margin-top: 0.5rem;
+    margin-bottom: 1rem;
     text-align: center;
 }
 

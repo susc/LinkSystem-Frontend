@@ -3,14 +3,14 @@
         <!-- 头部组件 -->
         <Header></Header>
 
-        <slot />
+        <!-- <slot /> -->
 
         <!-- 页脚 -->
         <Footer id="footer"></Footer>
     </div>
 </template>
   
-<script>
+<script setup>
 import 'normalize.css'
 import 'bootstrap/dist/css/bootstrap-grid.min.css'
 </script>
