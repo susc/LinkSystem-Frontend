@@ -6,7 +6,7 @@
                 <Logo />
 
                 <!-- 首页标语 -->
-                <h1 v-forbid-select>开始缩短您的链接吧</h1>
+                <h1 v-forbid-select>开始<span class="shorten-gradient-effect">缩短</span>您的链接吧</h1>
 
                 <!-- 输入区 -->
                 <div class="input-area">
@@ -211,5 +211,11 @@ a:hover {
 .shorten-button:disabled {
     background-color: #d9d9d9;
     color: black;
+}
+
+.shorten-gradient-effect {
+    color: transparent;
+    background-clip: text !important;
+    background: linear-gradient(135deg, rgba(49,120,228,1) 0%, rgba(12,38,193,1) 100%);
 }
 </style>
