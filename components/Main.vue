@@ -151,7 +151,9 @@ a:hover {
 .main h1 {
     margin: 0;
     text-align: center;
-    font-weight: 200;
+    font-weight: 900;
+    color: rgb(33, 53, 71);
+    font-size: 30px;
 }
 
 .input-area {

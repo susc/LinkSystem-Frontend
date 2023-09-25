@@ -1,35 +1,52 @@
 <template>
-    <!-- <div id="main-wrapper">
-        <slot />
-
-        <Footer id="footer"></Footer>
-    </div> -->
-
-    <Row justify="center">
-        <Col :xs="23" :sm="23" :md="18" class="lg-800px">
+    <div class="wrapper">
+        <div class="my-container">
             <slot />
-
-            <!-- 页脚 -->
-            <Footer id="footer"></Footer>
-        </Col>
-    </Row>
+            <Footer></Footer>
+        </div>
+    </div>
 </template>
   
 <script setup>
 import 'normalize.css'
-// import 'bootstrap/dist/css/bootstrap-grid.min.css'
-import { Row, Col } from 'ant-design-vue'
 </script>
 
-<style>
+<style scoped>
 :root {
     font-family: 'Noto Sans SC', Arial, Helvetica, sans-serif;
 }
 
-@media (min-width: 992px) {
-    .lg-800px {
-        max-width: 800px;
+/* lg */
+@media (min-width: 1200px) {
+    .my-container {
+        width: 900px;
     }
+}
+
+/* md */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .my-container {
+        width: 80vw;
+    }
+}
+
+/* sm */
+@media (min-width: 768px) and (max-width: 991px) {
+    .my-container {
+        width: 95vw;
+    }
+}
+
+/* xs */
+@media (max-width: 767px) {
+    .my-container {
+        width: 95vw;
+    }
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
 }
 </style>
   
