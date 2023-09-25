@@ -3,7 +3,7 @@
         <!-- 头部组件 -->
         <Header></Header>
 
-        <!-- <slot /> -->
+        <slot />
 
         <!-- 页脚 -->
         <Footer id="footer"></Footer>
