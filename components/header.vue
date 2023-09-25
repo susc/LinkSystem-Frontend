@@ -47,7 +47,6 @@ a:hover {
     /* header 背景颜色 */
     --header-bg-color: white;
 
-    height: var(--header-height);
     background: var(--header-bg-color);
     line-height: var(--header-height);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -67,6 +66,7 @@ a:hover {
 
 .brand {
     font-weight: 600;
-    font-size: 18px;
+    font-size: 30px;
+    padding: 0.5rem 1rem;
 }
 </style>

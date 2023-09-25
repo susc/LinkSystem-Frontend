@@ -4,7 +4,7 @@
             <Title>隐私条款 - {{SITE_NAME}}</Title>
         </Head>
 
-        <div class="container">
+        <div class="my-container">
             <h1>{{ SITE_NAME }}隐私条款</h1>
             <p>
                 我们不会从
@@ -28,7 +28,8 @@ const SITE_NAME = runtimeConfig.public.SITE_NAME
 </script>
 
 <style scoped>
-.container {
+.my-container {
     margin-top: 3rem;
+    padding: 0 1rem;
 }
 </style>
